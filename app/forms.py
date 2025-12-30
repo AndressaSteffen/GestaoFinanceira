@@ -2,7 +2,6 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 
-
 class RegisterForm(FlaskForm):
     email = StringField(
         'Email',
@@ -14,7 +13,7 @@ class RegisterForm(FlaskForm):
         validators=[DataRequired(), Length(min=6)]
     )
 
-    confirm_password = PasswordField(
+    confirm = PasswordField(
         'Confirmar Senha',
         validators=[
             DataRequired(),

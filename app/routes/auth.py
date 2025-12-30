@@ -13,12 +13,9 @@ def register():
     form = RegisterForm()
 
     if form.validate_on_submit():
-        email = form.email.data
-        password = form.password.data
-
-      
-
-        flash("Conta criada com sucesso!", "success")
+    
+        flash('Formulário enviado com sucesso!', 'success')
         return redirect(url_for('auth.login'))
 
     return render_template('register.html', form=form)
+
