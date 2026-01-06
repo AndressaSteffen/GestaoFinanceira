@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Gestão Financeira{% endblock %}</title>
+</head>
+<body>
+
+<nav>
+    <a href="/">Dashboard</a> |
+    <a href="{{ url_for('auth.login') }}">Login</a> |
+    <a href="{{ url_for('auth.register') }}">Registrar</a>
+</nav>
+
+<hr>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <p><strong>{{ message }}</strong></p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<hr>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>
